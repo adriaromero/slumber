@@ -31,6 +31,6 @@
 		<string>workout-processing</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.adriaromero.Slumber</string>
+	<string>com.hey.adria.slumber</string>
 </dict>
 </plist>

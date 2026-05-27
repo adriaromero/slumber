@@ -33,7 +33,7 @@ targets:
         com.apple.developer.healthkit: true
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adriaromero.Slumber
+        PRODUCT_BUNDLE_IDENTIFIER: com.hey.adria.slumber
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentBlue
     sources:
@@ -56,7 +56,7 @@ targets:
       path: WatchApp/Info.plist
       properties:
         CFBundleDisplayName: Slumber
-        WKCompanionAppBundleIdentifier: com.adriaromero.Slumber
+        WKCompanionAppBundleIdentifier: com.hey.adria.slumber
         NSMotionUsageDescription: "Slumber uses wrist motion to detect sleep stages."
         NSHealthShareUsageDescription: "Slumber reads heart rate and workout data."
         NSHealthUpdateUsageDescription: "Slumber saves a workout session to maintain background execution."
@@ -69,7 +69,7 @@ targets:
         com.apple.developer.healthkit.background-delivery: true
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adriaromero.Slumber.watchkitapp
+        PRODUCT_BUNDLE_IDENTIFIER: com.hey.adria.slumber.watchkitapp
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentBlue
     sources:

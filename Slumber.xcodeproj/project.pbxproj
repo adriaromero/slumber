@@ -310,7 +310,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentBlue;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/SlumberWatch.entitlements;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hey.adria.slumber.watchkitapp;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -331,7 +331,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hey.adria.slumber;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,7 +409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hey.adria.slumber;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -488,7 +488,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentBlue;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/SlumberWatch.entitlements;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hey.adria.slumber.watchkitapp;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
