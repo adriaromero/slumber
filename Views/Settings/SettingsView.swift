@@ -2,6 +2,9 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var healthStore: HealthKitService
+    @EnvironmentObject var sleepStore: SleepDataStore
+
+    @State private var showResetConfirm = false
 
     @AppStorage("smartWakeEnabled")   private var smartWakeEnabled   = true
     @AppStorage("morningNotification") private var morningNotif      = false
@@ -97,8 +100,23 @@ struct SettingsView: View {
                         // open privacy URL
                     }
 
+                    Button("Load sample data") {
+                        sleepStore.loadSampleData()
+                    }
+                    .foregroundColor(Color("AccentBlue"))
+
                     Button("Reset all data", role: .destructive) {
-                        // confirmatory alert before clearing
+                        showResetConfirm = true
+                    }
+                    .confirmationDialog("Delete all sleep sessions?",
+                                        isPresented: $showResetConfirm,
+                                        titleVisibility: .visible) {
+                        Button("Delete all data", role: .destructive) {
+                            sleepStore.sessions = []
+                            sleepStore.latestSession = nil
+                            UserDefaults.standard.removeObject(forKey: "slumber.sessions")
+                        }
+                        Button("Cancel", role: .cancel) {}
                     }
                 }
             }

@@ -74,7 +74,9 @@ struct SleepNowView: View {
 
     private var statusSection: some View {
         VStack(spacing: 6) {
-            Text(trackingManager.isTracking ? "Tracking in progress" : "Ready to track sleep")
+            Text(trackingManager.isProcessing ? "Analyzing sleep…"
+               : trackingManager.isTracking   ? "Tracking in progress"
+               : "Ready to track sleep")
                 .font(.system(size: 18, weight: .light))
                 .foregroundColor(.white.opacity(0.85))
 
@@ -119,18 +121,28 @@ struct SleepNowView: View {
                     trackingManager.startTracking()
                 }
             } label: {
-                Text(trackingManager.isTracking ? "Stop Tracking" : "Start Sleep Tracking")
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 17)
-                    .background(
-                        RoundedRectangle(cornerRadius: 18)
-                            .fill(trackingManager.isTracking
-                                  ? Color("AccentGreen").opacity(0.85)
-                                  : Color("AccentBlue"))
-                    )
+                Group {
+                    if trackingManager.isProcessing {
+                        HStack(spacing: 10) {
+                            ProgressView().tint(.white)
+                            Text("Analyzing…")
+                        }
+                    } else {
+                        Text(trackingManager.isTracking ? "Stop Tracking" : "Start Sleep Tracking")
+                    }
+                }
+                .font(.system(size: 16, weight: .medium))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 17)
+                .background(
+                    RoundedRectangle(cornerRadius: 18)
+                        .fill(trackingManager.isProcessing ? Color.gray.opacity(0.4)
+                            : trackingManager.isTracking   ? Color("AccentGreen").opacity(0.85)
+                            : Color("AccentBlue"))
+                )
             }
+            .disabled(trackingManager.isProcessing)
 
             Button {
                 // Navigate to schedule settings
@@ -184,7 +196,8 @@ import Combine
 
 @MainActor
 class TrackingManager: ObservableObject {
-    @Published var isTracking = false
+    @Published var isTracking  = false
+    @Published var isProcessing = false   // true while classifying after stop
     @Published var elapsedString = "0:00"
     @Published var completedSession: SleepSession?
 
@@ -196,6 +209,7 @@ class TrackingManager: ObservableObject {
         completedSession = nil
         startDate = Date()
         isTracking = true
+        isProcessing = false
         motionService.start()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self, let start = self.startDate else { return }
@@ -203,32 +217,39 @@ class TrackingManager: ObservableObject {
             let h = elapsed / 3600
             let m = (elapsed % 3600) / 60
             let s = elapsed % 60
-            Task { @MainActor in
-                self.elapsedString = h > 0 ? "\(h):\(String(format:"%02d",m)):\(String(format:"%02d",s))"
-                                           : "\(m):\(String(format:"%02d",s))"
-            }
+            let str = h > 0
+                ? "\(h):\(String(format: "%02d", m)):\(String(format: "%02d", s))"
+                : "\(m):\(String(format: "%02d", s))"
+            // Timer fires on main RunLoop so this is safe without an extra Task hop
+            self.elapsedString = str
         }
     }
 
     func stopTracking(healthStore: HealthKitService) {
         guard let start = startDate else { return }
-        isTracking = false
+        isTracking  = false
+        isProcessing = true
         timer?.invalidate()
         timer = nil
         startDate = nil
         let rawSamples = motionService.stop()
         let end = Date()
-        let segments = SleepStageClassifier().classify(samples: rawSamples, sessionStart: start, sessionEnd: end)
-        Task { @MainActor [weak self] in
+
+        // Classification can take seconds on a full night of 10 Hz samples —
+        // run it off the main actor so the UI stays responsive.
+        Task.detached(priority: .userInitiated) { [weak self] in
             guard let self else { return }
+            let segments  = SleepStageClassifier().classify(
+                samples: rawSamples, sessionStart: start, sessionEnd: end)
             let hrSamples = await healthStore.fetchHeartRate(from: start, to: end)
-            self.completedSession = SleepSession(
-                id: UUID(),
-                startDate: start,
-                endDate: end,
-                segments: segments,
-                heartRateSamples: hrSamples
-            )
+            let session   = SleepSession(id: UUID(),
+                                         startDate: start, endDate: end,
+                                         segments: segments,
+                                         heartRateSamples: hrSamples)
+            await MainActor.run {
+                self.isProcessing   = false
+                self.completedSession = session
+            }
         }
     }
 }

@@ -89,6 +89,12 @@ struct DashboardView: View {
             Text("Tap Sleep to start tracking tonight")
                 .font(.system(size: 14))
                 .foregroundColor(.white.opacity(0.4))
+            Button("Try with sample data") {
+                sleepStore.loadSampleData()
+            }
+            .font(.system(size: 13, weight: .medium))
+            .foregroundColor(Color("AccentBlue"))
+            .padding(.top, 4)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 60)
