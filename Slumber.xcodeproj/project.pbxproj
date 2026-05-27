@@ -14,42 +14,20 @@
 		3952EE122B4586051B28ED32 /* SleepNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A466C8CD9FC36706C1AEA4 /* SleepNowView.swift */; };
 		4ABF30F20159E71FE3D3C1CD /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37DB9D2B463A22FACF21855 /* HistoryView.swift */; };
 		5FC0AB588BDEB45A50C5700C /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1B0929711A5994852767F /* HealthKitService.swift */; };
+		62DC099FE4C7D9557541B3EC /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F322655880ED2DBBF4E2DE87 /* SampleData.swift */; };
+		98CA07FA2BD62318926BAEA4 /* SlumberLogoMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190937765591CBF84E805703 /* SlumberLogoMark.swift */; };
 		9DE7DE567A6B544D4F1AF348 /* WatchMotionBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEB23EAC02FDDFCFF0466E /* WatchMotionBridge.swift */; };
 		A1FBF2BAD1BEA031A4616FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26F0ED9629B78301B669F4 /* Assets.xcassets */; };
 		CA90C14C60CDE1B443E3F36D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1703F426DD218749155EA5B /* DashboardView.swift */; };
-		CE66A2B10E557DB77F854417 /* SlumberWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DAA2517EFF16A007351C8A2D /* SlumberWatch.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE0772FB5CC38F8F586146F8 /* SlumberWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A8AE20AA9C06A2853D5C3 /* SlumberWatchApp.swift */; };
 		DECC6FCF8835B621CEB8006B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FFF2E1DA5CACF92D1E6E6 /* ContentView.swift */; };
 		F6397A0F98C5F071B80EB039 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A11B8208293041C1B1919E /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2010491608E5D764B05C2F3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 877718A5E081CC120EB319A6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 20C074E3C2F5BF77F8F97B1C;
-			remoteInfo = SlumberWatch;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5675D071B48DC485C3E1A43F /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				CE66A2B10E557DB77F854417 /* SlumberWatch.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		059A8AE20AA9C06A2853D5C3 /* SlumberWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlumberWatchApp.swift; sourceTree = "<group>"; };
 		1218B95CAAEB3D323F50C271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		190937765591CBF84E805703 /* SlumberLogoMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlumberLogoMark.swift; sourceTree = "<group>"; };
 		27D1B0929711A5994852767F /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		32A466C8CD9FC36706C1AEA4 /* SleepNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepNowView.swift; sourceTree = "<group>"; };
 		3C8FFF2E1DA5CACF92D1E6E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +41,7 @@
 		C35DC2B709D60539EB3BC6F9 /* SleepStageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStageClassifier.swift; sourceTree = "<group>"; };
 		DAA2517EFF16A007351C8A2D /* SlumberWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlumberWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF26F0ED9629B78301B669F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F322655880ED2DBBF4E2DE87 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		F75C6E27EDFF91085ACF0545 /* SlumberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlumberApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +83,7 @@
 		5BEBD3CDD9B35F12646F375F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				190937765591CBF84E805703 /* SlumberLogoMark.swift */,
 				58BE0C9E7B58445C7318D6B7 /* Dashboard */,
 				C2B21F8478CCC907551096C2 /* History */,
 				3D6A1509C1329A893BF08693 /* Settings */,
@@ -155,6 +135,7 @@
 		C3E46E76F10441DCB7391EAE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F322655880ED2DBBF4E2DE87 /* SampleData.swift */,
 				8D3F27BF9BF4C3DBFAA3E0C4 /* SleepModels.swift */,
 			);
 			path = Models;
@@ -196,12 +177,10 @@
 			buildPhases = (
 				B29ED3B14FC7E511988D5D54 /* Sources */,
 				9A4A5C2E7FE854B28554C051 /* Resources */,
-				5675D071B48DC485C3E1A43F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				60C3AA4D0DE6264AF466D113 /* PBXTargetDependency */,
 			);
 			name = Slumber;
 			packageProductDependencies = (
@@ -283,24 +262,18 @@
 				CA90C14C60CDE1B443E3F36D /* DashboardView.swift in Sources */,
 				5FC0AB588BDEB45A50C5700C /* HealthKitService.swift in Sources */,
 				4ABF30F20159E71FE3D3C1CD /* HistoryView.swift in Sources */,
+				62DC099FE4C7D9557541B3EC /* SampleData.swift in Sources */,
 				F6397A0F98C5F071B80EB039 /* SettingsView.swift in Sources */,
 				26212DE0510712221A231038 /* SleepModels.swift in Sources */,
 				3952EE122B4586051B28ED32 /* SleepNowView.swift in Sources */,
 				1ECA5E1AD425664B995A68FA /* SleepStageClassifier.swift in Sources */,
 				38959EC3BA08504383E44B59 /* SlumberApp.swift in Sources */,
+				98CA07FA2BD62318926BAEA4 /* SlumberLogoMark.swift in Sources */,
 				9DE7DE567A6B544D4F1AF348 /* WatchMotionBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		60C3AA4D0DE6264AF466D113 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 20C074E3C2F5BF77F8F97B1C /* SlumberWatch */;
-			targetProxy = 2010491608E5D764B05C2F3F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		05C75A48FD1A13898E39AF90 /* Release */ = {
