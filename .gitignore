@@ -1,0 +1,24 @@
+# Xcode
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+
+# Build
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+
+# xcodegen regenerated artifacts (source of truth is project.yml)
+# Keep project.pbxproj; ignore user-specific workspace state
+Slumber.xcodeproj/xcuserdata/
+Slumber.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Stale Xcode projects created during setup
+Slumber/
+SlumberWatch/

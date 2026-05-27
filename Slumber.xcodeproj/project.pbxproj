@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1ECA5E1AD425664B995A68FA /* SleepStageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DC2B709D60539EB3BC6F9 /* SleepStageClassifier.swift */; };
+		26212DE0510712221A231038 /* SleepModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F27BF9BF4C3DBFAA3E0C4 /* SleepModels.swift */; };
+		29457015F3DB6DA44EDA790A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26F0ED9629B78301B669F4 /* Assets.xcassets */; };
+		38959EC3BA08504383E44B59 /* SlumberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C6E27EDFF91085ACF0545 /* SlumberApp.swift */; };
+		3952EE122B4586051B28ED32 /* SleepNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A466C8CD9FC36706C1AEA4 /* SleepNowView.swift */; };
+		4ABF30F20159E71FE3D3C1CD /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37DB9D2B463A22FACF21855 /* HistoryView.swift */; };
+		5FC0AB588BDEB45A50C5700C /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1B0929711A5994852767F /* HealthKitService.swift */; };
+		9DE7DE567A6B544D4F1AF348 /* WatchMotionBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEB23EAC02FDDFCFF0466E /* WatchMotionBridge.swift */; };
+		A1FBF2BAD1BEA031A4616FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF26F0ED9629B78301B669F4 /* Assets.xcassets */; };
+		CA90C14C60CDE1B443E3F36D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1703F426DD218749155EA5B /* DashboardView.swift */; };
+		CE66A2B10E557DB77F854417 /* SlumberWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DAA2517EFF16A007351C8A2D /* SlumberWatch.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE0772FB5CC38F8F586146F8 /* SlumberWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A8AE20AA9C06A2853D5C3 /* SlumberWatchApp.swift */; };
+		DECC6FCF8835B621CEB8006B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FFF2E1DA5CACF92D1E6E6 /* ContentView.swift */; };
+		F6397A0F98C5F071B80EB039 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A11B8208293041C1B1919E /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2010491608E5D764B05C2F3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 877718A5E081CC120EB319A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20C074E3C2F5BF77F8F97B1C;
+			remoteInfo = SlumberWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5675D071B48DC485C3E1A43F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CE66A2B10E557DB77F854417 /* SlumberWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		059A8AE20AA9C06A2853D5C3 /* SlumberWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlumberWatchApp.swift; sourceTree = "<group>"; };
+		1218B95CAAEB3D323F50C271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		27D1B0929711A5994852767F /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		32A466C8CD9FC36706C1AEA4 /* SleepNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepNowView.swift; sourceTree = "<group>"; };
+		3C8FFF2E1DA5CACF92D1E6E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		56ACF498D37C966AD95D78D8 /* Slumber.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Slumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B61AB15F33A2B1B506F389 /* SlumberWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlumberWatch.entitlements; sourceTree = "<group>"; };
+		8CEEB23EAC02FDDFCFF0466E /* WatchMotionBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMotionBridge.swift; sourceTree = "<group>"; };
+		8D3F27BF9BF4C3DBFAA3E0C4 /* SleepModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepModels.swift; sourceTree = "<group>"; };
+		A37DB9D2B463A22FACF21855 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		A3A11B8208293041C1B1919E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C1703F426DD218749155EA5B /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C35DC2B709D60539EB3BC6F9 /* SleepStageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStageClassifier.swift; sourceTree = "<group>"; };
+		DAA2517EFF16A007351C8A2D /* SlumberWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlumberWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF26F0ED9629B78301B669F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F75C6E27EDFF91085ACF0545 /* SlumberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlumberApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		14575F9FF4490D828F357E1D /* SleepNow */ = {
+			isa = PBXGroup;
+			children = (
+				32A466C8CD9FC36706C1AEA4 /* SleepNowView.swift */,
+			);
+			path = SleepNow;
+			sourceTree = "<group>";
+		};
+		1B9111B2D90C3CBBBA6B2420 /* WatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				1218B95CAAEB3D323F50C271 /* Info.plist */,
+				64B61AB15F33A2B1B506F389 /* SlumberWatch.entitlements */,
+				059A8AE20AA9C06A2853D5C3 /* SlumberWatchApp.swift */,
+			);
+			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		3D6A1509C1329A893BF08693 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A3A11B8208293041C1B1919E /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		58BE0C9E7B58445C7318D6B7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				C1703F426DD218749155EA5B /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		5BEBD3CDD9B35F12646F375F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58BE0C9E7B58445C7318D6B7 /* Dashboard */,
+				C2B21F8478CCC907551096C2 /* History */,
+				3D6A1509C1329A893BF08693 /* Settings */,
+				14575F9FF4490D828F357E1D /* SleepNow */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60BEBA21DD828182F58C159D = {
+			isa = PBXGroup;
+			children = (
+				DF26F0ED9629B78301B669F4 /* Assets.xcassets */,
+				FCFE827B072572E575621552 /* App */,
+				C3E46E76F10441DCB7391EAE /* Models */,
+				B45340651E54C1E4553DB397 /* Services */,
+				5BEBD3CDD9B35F12646F375F /* Views */,
+				1B9111B2D90C3CBBBA6B2420 /* WatchApp */,
+				9D781092E22839F527B6FE62 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9D781092E22839F527B6FE62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56ACF498D37C966AD95D78D8 /* Slumber.app */,
+				DAA2517EFF16A007351C8A2D /* SlumberWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B45340651E54C1E4553DB397 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				27D1B0929711A5994852767F /* HealthKitService.swift */,
+				C35DC2B709D60539EB3BC6F9 /* SleepStageClassifier.swift */,
+				8CEEB23EAC02FDDFCFF0466E /* WatchMotionBridge.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2B21F8478CCC907551096C2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A37DB9D2B463A22FACF21855 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		C3E46E76F10441DCB7391EAE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D3F27BF9BF4C3DBFAA3E0C4 /* SleepModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCFE827B072572E575621552 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3C8FFF2E1DA5CACF92D1E6E6 /* ContentView.swift */,
+				F75C6E27EDFF91085ACF0545 /* SlumberApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20C074E3C2F5BF77F8F97B1C /* SlumberWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC13F6C9B523C026F6C779A8 /* Build configuration list for PBXNativeTarget "SlumberWatch" */;
+			buildPhases = (
+				5921DFE2FBD5FD93976D97D3 /* Sources */,
+				D98D2D0CEF5614849CB34EBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlumberWatch;
+			packageProductDependencies = (
+			);
+			productName = SlumberWatch;
+			productReference = DAA2517EFF16A007351C8A2D /* SlumberWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3585AD0BDB5E3131B88274DD /* Slumber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE1387BFF281274D8DFDE11F /* Build configuration list for PBXNativeTarget "Slumber" */;
+			buildPhases = (
+				B29ED3B14FC7E511988D5D54 /* Sources */,
+				9A4A5C2E7FE854B28554C051 /* Resources */,
+				5675D071B48DC485C3E1A43F /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60C3AA4D0DE6264AF466D113 /* PBXTargetDependency */,
+			);
+			name = Slumber;
+			packageProductDependencies = (
+			);
+			productName = Slumber;
+			productReference = 56ACF498D37C966AD95D78D8 /* Slumber.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		877718A5E081CC120EB319A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 2793327CCAFDDEF263B42E90 /* Build configuration list for PBXProject "Slumber" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 60BEBA21DD828182F58C159D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9D781092E22839F527B6FE62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3585AD0BDB5E3131B88274DD /* Slumber */,
+				20C074E3C2F5BF77F8F97B1C /* SlumberWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A4A5C2E7FE854B28554C051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1FBF2BAD1BEA031A4616FBE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98D2D0CEF5614849CB34EBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29457015F3DB6DA44EDA790A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5921DFE2FBD5FD93976D97D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0772FB5CC38F8F586146F8 /* SlumberWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B29ED3B14FC7E511988D5D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECC6FCF8835B621CEB8006B /* ContentView.swift in Sources */,
+				CA90C14C60CDE1B443E3F36D /* DashboardView.swift in Sources */,
+				5FC0AB588BDEB45A50C5700C /* HealthKitService.swift in Sources */,
+				4ABF30F20159E71FE3D3C1CD /* HistoryView.swift in Sources */,
+				F6397A0F98C5F071B80EB039 /* SettingsView.swift in Sources */,
+				26212DE0510712221A231038 /* SleepModels.swift in Sources */,
+				3952EE122B4586051B28ED32 /* SleepNowView.swift in Sources */,
+				1ECA5E1AD425664B995A68FA /* SleepStageClassifier.swift in Sources */,
+				38959EC3BA08504383E44B59 /* SlumberApp.swift in Sources */,
+				9DE7DE567A6B544D4F1AF348 /* WatchMotionBridge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60C3AA4D0DE6264AF466D113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20C074E3C2F5BF77F8F97B1C /* SlumberWatch */;
+			targetProxy = 2010491608E5D764B05C2F3F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05C75A48FD1A13898E39AF90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentBlue;
+				CODE_SIGN_ENTITLEMENTS = WatchApp/SlumberWatch.entitlements;
+				INFOPLIST_FILE = WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		74ECD3350440108E3BEFFC73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentBlue;
+				CODE_SIGN_ENTITLEMENTS = Slumber.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Slumber-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B5866AE3381451EE68C6600 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		A1B881B35331C127CBB4A740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentBlue;
+				CODE_SIGN_ENTITLEMENTS = Slumber.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Slumber-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A96CA2630E47ACEA1658F87B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		E5AF0721075DA7805CE551EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentBlue;
+				CODE_SIGN_ENTITLEMENTS = WatchApp/SlumberWatch.entitlements;
+				INFOPLIST_FILE = WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adriaromero.Slumber.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2793327CCAFDDEF263B42E90 /* Build configuration list for PBXProject "Slumber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A96CA2630E47ACEA1658F87B /* Debug */,
+				9B5866AE3381451EE68C6600 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AE1387BFF281274D8DFDE11F /* Build configuration list for PBXNativeTarget "Slumber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74ECD3350440108E3BEFFC73 /* Debug */,
+				A1B881B35331C127CBB4A740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BC13F6C9B523C026F6C779A8 /* Build configuration list for PBXNativeTarget "SlumberWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5AF0721075DA7805CE551EC /* Debug */,
+				05C75A48FD1A13898E39AF90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 877718A5E081CC120EB319A6 /* Project object */;
+}

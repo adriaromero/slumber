@@ -1,16 +1,30 @@
 // WatchApp/SlumberWatchApp.swift
-// Target: watchOS 4.0+  (Series 1 maximum)
-// Key constraint: no background execution without HKWorkoutSession on watchOS 4.
+// Target: watchOS 7.0+ build target (Series 1 hardware maxes at watchOS 4,
+// but modern Xcode requires watchOS 7 minimum deployment target).
+// Background execution uses HKWorkoutSession — same workaround, still required
+// on all watchOS versions for non-workout apps that need extended runtime.
 
+import SwiftUI
 import WatchKit
 import Foundation
 import CoreMotion
 import HealthKit
 import WatchConnectivity
 
-// MARK: - App Entry (watchOS 4 uses WKExtensionDelegate)
+// MARK: - App Entry
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+@main
+struct SlumberWatchApp: App {
+    @WKApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
+    var body: some Scene {
+        WindowGroup {
+            EmptyView()
+        }
+    }
+}
+
+class AppDelegate: NSObject, WKApplicationDelegate {
     func applicationDidFinishLaunching() {
         WatchSessionManager.shared.activateSession()
     }
