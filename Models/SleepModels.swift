@@ -181,6 +181,21 @@ class SleepDataStore: ObservableObject {
         save()
     }
 
+    /// Merges imported sessions, skipping any whose start date is within 30 min
+    /// of an already-stored session. Returns the number of sessions added.
+    @discardableResult
+    func merge(_ incoming: [SleepSession]) -> Int {
+        let existingTimestamps = sessions.map { $0.startDate.timeIntervalSince1970 }
+        let toAdd = incoming.filter { candidate in
+            !existingTimestamps.contains { abs($0 - candidate.startDate.timeIntervalSince1970) < 1800 }
+        }
+        sessions.append(contentsOf: toAdd)
+        sessions.sort { $0.startDate > $1.startDate }
+        latestSession = sessions.first
+        save()
+        return toAdd.count
+    }
+
     // MARK: Persistence
 
     private func save() {

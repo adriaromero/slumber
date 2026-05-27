@@ -3,6 +3,10 @@ import Charts
 
 struct HistoryView: View {
     @EnvironmentObject var sleepStore: SleepDataStore
+    @EnvironmentObject var healthStore: HealthKitService
+
+    @State private var isImporting = false
+    @State private var importBanner: String?
 
     var recentSessions: [SleepSession] {
         Array(sleepStore.sessions.prefix(14))
@@ -17,15 +21,22 @@ struct HistoryView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
 
-                    // Weekly overview chart
+                    if let banner = importBanner {
+                        Text(banner)
+                            .font(.system(size: 13))
+                            .foregroundColor(Color("AccentGreen"))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 8)
+                            .background(Color("AccentGreen").opacity(0.1))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+
                     WeeklyBarChart(sessions: last7)
 
-                    // Averages summary
                     if !last7.isEmpty {
                         averagesRow
                     }
 
-                    // Session list
                     VStack(spacing: 10) {
                         ForEach(recentSessions) { session in
                             NavigationLink(destination: SessionDetailView(session: session)) {
@@ -45,6 +56,40 @@ struct HistoryView: View {
             .background(Color("BackgroundPrimary").ignoresSafeArea())
             .navigationTitle("History")
             .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        runImport()
+                    } label: {
+                        if isImporting {
+                            ProgressView().tint(Color("AccentBlue"))
+                        } else {
+                            Image(systemName: "square.and.arrow.down")
+                                .foregroundColor(Color("AccentBlue"))
+                        }
+                    }
+                    .disabled(isImporting)
+                }
+            }
+        }
+    }
+
+    private func runImport() {
+        isImporting = true
+        importBanner = nil
+        Task {
+            let fetched = await healthStore.fetchSleepSessions(days: 30)
+            let added = sleepStore.merge(fetched)
+            await MainActor.run {
+                isImporting = false
+                importBanner = added > 0
+                    ? "Imported \(added) session\(added == 1 ? "" : "s") from Apple Health"
+                    : "No new sessions found in the last 30 days"
+                Task {
+                    try? await Task.sleep(nanoseconds: 4_000_000_000)
+                    importBanner = nil
+                }
+            }
         }
     }
 
