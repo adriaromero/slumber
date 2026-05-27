@@ -42,10 +42,11 @@ targets:
       - path: Services
       - path: Views
       - path: Assets.xcassets
-    dependencies:
-      - target: SlumberWatch
-        embed: true
-        codeSign: true
+    # Watch dependency removed until phone install is confirmed working
+    # dependencies:
+    #   - target: SlumberWatch
+    #     embed: true
+    #     codeSign: true
 
   # ── watchOS App ───────────────────────────────────────────────────────────
   SlumberWatch:
