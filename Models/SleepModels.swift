@@ -92,6 +92,7 @@ struct SleepSession: Identifiable, Codable {
     }
 
     var awakeningCount: Int {
+        guard segments.count > 1 else { return 0 }
         var count = 0
         for i in 1..<segments.count {
             if segments[i].stage == .awake && segments[i - 1].stage != .awake {
