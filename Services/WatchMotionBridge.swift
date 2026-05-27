@@ -3,18 +3,28 @@ import WatchConnectivity
 class WatchMotionBridge: NSObject, WCSessionDelegate {
     private var motionSamples: [MotionSample] = []
 
+    override init() {
+        super.init()
+        guard WCSession.isSupported() else { return }
+        WCSession.default.delegate = self
+        WCSession.default.activate()
+    }
+
     func start() {
         motionSamples.removeAll()
-        guard WCSession.isSupported() else { return }
-        let s = WCSession.default
-        s.delegate = self
-        if s.activationState != .activated { s.activate() }
-        s.sendMessage(["command": "startTracking"], replyHandler: nil)
+        send(["command": "startTracking"])
     }
 
     func stop() -> [MotionSample] {
-        WCSession.default.sendMessage(["command": "stopTracking"], replyHandler: nil)
+        send(["command": "stopTracking"])
         return motionSamples
+    }
+
+    private func send(_ message: [String: Any]) {
+        guard WCSession.isSupported() else { return }
+        let s = WCSession.default
+        guard s.activationState == .activated, s.isReachable else { return }
+        s.sendMessage(message, replyHandler: nil, errorHandler: nil)
     }
 
     // MARK: WCSessionDelegate
