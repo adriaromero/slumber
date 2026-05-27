@@ -59,9 +59,7 @@ struct DashboardView: View {
                     .foregroundColor(.white.opacity(0.4))
             }
             Spacer()
-            Image(systemName: "person.circle.fill")
-                .font(.system(size: 34))
-                .foregroundColor(Color("AccentBlue").opacity(0.8))
+            SlumberLogoMark(size: 40)
         }
         .padding(.top, 8)
     }
